@@ -1,0 +1,131 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block content %}
+<main class="d-flex justify-content-center align-items-center p-5 my-5">
+	<div class="about-us">
+		<div class="container p-4">
+			<div class="row justify-content-center align-items-center g-2">
+				<div
+					class="col-12 mb-4 d-flex flex-wrap justify-content-center align-items-center text-center gap-5"
+				>
+					<div class="content">
+						<h3 class="h1 fw-bolder main-color-blue inter">Who we are ?</h3>
+						<div class="multi-Line">
+							<div class="row justify-content-center align-items-center g-2">
+								<div class="col-6 blue-Line"></div>
+								<div class="col-6 green-Line"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 mt-5 d-flex justify-content-between aling-items-center my-4">
+					<div class="row justify-content-between align-items-center g-2">
+						<div class="col-lg-4 order-lg-2">
+							<div class="back-border">
+								<div class="fan-border">
+									<div class="med-img">
+										<img class="w-75" src="{% static "images/meds.png" %}" alt="" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div
+								class="content d-flex flex-wrap justify-content-center align-items-center text-center gap-2"
+							>
+								<h3 class="h4 main-color-blue">
+									All your Medicine needs in one place
+								</h3>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item grey">
+										Search and find all kind of drugs
+									</li>
+									<li class="list-group-item grey">
+										We have drugs for social case treatments
+									</li>
+									<li class="list-group-item grey">
+										Get notified when your drug is available
+									</li>
+								</ul>
+								<button type="button" class="btn btn-outline-success w-100">
+									Get prescription
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 mt-5 d-flex justify-content-between aling-items-center my-4">
+					<div class="row justify-content-between align-items-center g-2">
+						<div class="col-lg-4">
+							<div class="back-border-2">
+								<div class="fan-border-2">
+									<div class="med-img">
+										<img class="w-75" src = '{% static "images/meds-1.png" %}' alt="" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 order-lg-2">
+							<div
+								class="content d-flex flex-wrap justify-content-center align-items-center text-center gap-2"
+							>
+								<h3 class="h4 main-color-blue">
+									Set up your profile and get refill easily
+								</h3>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item grey">
+										When you are a member your refill is easier
+									</li>
+									<li class="list-group-item grey">
+										With one click your medicine is on it’s way
+									</li>
+									<li class="list-group-item grey">
+										Select a health care specialist
+									</li>
+								</ul>
+								<button type="button" class="btn btn-outline-success w-100">
+									Get prescription
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 mt-5 d-flex justify-content-between aling-items-center my-4">
+					<div class="row justify-content-between align-items-center g-2">
+						<div class="col-lg-4 order-lg-1">
+							<div class="back-border-1">
+								<div class="fan-border-1">
+									<div class="med-img">
+										<img class="w-75" src = "{% static "images/meds-2.png" %}" alt="" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div
+								class="content d-flex flex-wrap justify-content-center align-items-center text-center gap-2"
+							>
+								<h3 class="h4 main-color-blue">Get your drugs at your doorstep</h3>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item grey">
+										Get straight delivery to your doorstep
+									</li>
+									<li class="list-group-item grey">
+										We deliver within 24hrs of request
+									</li>
+									<li class="list-group-item grey">
+										We guarantee speedily response
+									</li>
+								</ul>
+								<button type="button" class="btn btn-outline-success w-100">
+									Get prescription
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock content %}
