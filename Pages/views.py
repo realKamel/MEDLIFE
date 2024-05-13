@@ -14,17 +14,9 @@ def contact_us(request):
     return render(request,'contact_us.html')
 
 
-def item(request):
-    return render(request,'item.html')
-
-
 def log_in(request):
     return render(request,'log_in.html')
 
 
 def sign_up(request):
     return render(request,'sign_up.html')
-
-
-def products(request):
-    return render(request,'products.html')
