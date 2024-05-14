@@ -7,20 +7,29 @@
 			<div
 				class="col-12 d-flex flex-wrap justify-content-center align-items-center text-center gap-5"
 			>
-				<h2 class="text-white fw-bolder h1 m-2">We can get your Drug</h2>
+				<h2 class="text-white fw-bolder h1 m-2">
+					We can get your Drug
+				</h2>
 				<p class="text-white lead w-100 m-2">
-					We have all the drugs your doctor prescribed for your health and what’s more, we
-					can get it to you.
+					We have all the drugs your doctor prescribed for
+					your health and what’s more, we can get it to you.
 				</p>
-				<form class="d-flex rounded w-100 m-2" role="search">
+				<form class="d-flex rounded w-75 m-2" role="search">
 					<input
-						class="form-control me-2 rounded-pill"
+						autocomplete
+						autofocus
+						class="form-control me-2 rounded-pill p-2 my-input my-search"
 						type="search"
 						placeholder="Try medicine"
 						aria-label="Search"
 						name="q"
 					/>
-					<button class="btn btn-success rounded-pill" type="submit">Search</button>
+					<button
+						class="btn btn-success rounded-pill"
+						type="submit"
+					>
+						Search
+					</button>
 				</form>
 			</div>
 		</div>
@@ -49,25 +58,40 @@
 			</div>
 		</div>
 	</div>
-	<div class="clients mt-2 p-4">
+	<div class="clients py-4 h-100">
 		<div class="container">
-			<div class="row justify-content-center align-items-center g-2">
-				<div class="col-lg-6">
-					<img class="w-100" src="images/" alt="" />
+			<div class="row justify-content-center align-items-center">
+				<div class="col-lg-6 overflow-hidden">
+					<div class="w-75">
+						<img class="w-100 rounded" src="{% static "images/gerald maldiliecne.PNG" %}" alt="" />
+					</div>
 				</div>
-				<div class="col-lg-6">
-					<div class="content bg-info">
-						<div class="title inter h1 text-center">What Our Clients Say</div>
+				<div class="col-lg-6 my-5">
+					<div class="content">
+						<div class="title h1 text-center">
+							What Our Clients Say
+						</div>
 						<div class="multi-Line">
 							<div class="multi-Line">
-								<div class="row justify-content-center align-items-center g-2">
-									<div class="col-4 blue-Line rounded"></div>
-									<div class="col-4 green-Line rounded"></div>
+								<div
+									class="row justify-content-center align-items-center"
+								>
+									<div
+										class="col-4 blue-Line rounded"
+									></div>
+									<div
+										class="col-4 green-Line rounded"
+									></div>
 								</div>
 							</div>
 						</div>
-						<div id="carouselExampleCaptions" class="h-25 carousel slide bg-danger">
-							<div class="carousel-indicators mt-2">
+						<div
+							id="carouselExampleCaptions"
+							class="carousel slide"
+						>
+							<div
+								class="carousel-indicators d-flex justify-content-start align-items-center"
+							>
 								<button
 									type="button"
 									data-bs-target="#carouselExampleCaptions"
@@ -93,30 +117,62 @@
 							</div>
 							<div class="carousel-inner">
 								<div class="carousel-item active p-5">
-									<div class="carousel-caption d-none d-md-block">
-										<div class="content">
-											“The ease of delivery is one that I depended on when I
-											was bedridden and couldn’t even walk. Their services is
+									<div
+										class="carousel-caption d-md-block"
+									>
+										<div
+											class="content1 text-muted"
+										>
+											“The ease of delivery is one
+											that I depended on when I
+											was bedridden and couldn’t
+											even walk. Their services is
 											awesome”
 										</div>
-										<div class="main-color-blue fw-4">- Gerald Maldiliene</div>
+										<div
+											class="main-color-blue ger fw-4"
+										>
+											- Gerald Maldiliene
+										</div>
 									</div>
 								</div>
 								<div class="carousel-item p-5">
-									<div class="carousel-caption d-none d-md-block">
-										<div class="content">
-											“The ease of delivery is one that I depended on when I
-											was bedridden and couldn’t even walk. Their services is
+									<div
+										class="carousel-caption d-none d-md-block"
+									>
+										<div
+											class="content1 text-muted"
+										>
+											“The ease of delivery is one
+											that I depended on when I
+											was bedridden and couldn’t
+											even walk. Their services is
 											awesome”
+										</div>
+										<div
+											class="main-color-blue ger fw-4"
+										>
+											- Gerald Maldiliene
 										</div>
 									</div>
 								</div>
 								<div class="carousel-item p-5">
-									<div class="carousel-caption d-none d-md-block">
-										<div class="content">
-											“The ease of delivery is one that I depended on when I
-											was bedridden and couldn’t even walk. Their services is
+									<div
+										class="carousel-caption d-none d-md-block"
+									>
+										<div
+											class="content1 text-muted"
+										>
+											“The ease of delivery is one
+											that I depended on when I
+											was bedridden and couldn’t
+											even walk. Their services is
 											awesome”
+										</div>
+										<div
+											class="main-color-blue ger fw-4"
+										>
+											- Gerald Maldiliene
 										</div>
 									</div>
 								</div>
