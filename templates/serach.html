@@ -1,0 +1,110 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<main class="products my-5">
+	<div class="container p-5">
+		<div class="col-lg-6">
+			<div class="back d-flex">
+				<div>
+					<a href="products.html">
+						<i
+							class="fa-solid fa-arrow-left text-black fs-5 me-2 rounded-circle border p-2 bg-secondary"
+						></i>
+					</a>
+				</div>
+				<h3 class="h2">Back To Product Page</h3>
+			</div>
+		</div>
+		<div class="row justify-content-center align-items-center g-2 flex-wrap">
+			<div class="col-12">
+				<div class="row align-items-center justify-content-center mt-4">
+					<div class="col-12">
+						<h3 class="text-center main-color-blue h1 fw-1 mb-4">Medicine Products</h3>
+					</div>
+					<div class="col-md-6 col-lg-4 col-xl-3">
+						<div class="item1 shadow mb-5 bg-secondary rounded">
+							<div>
+								<img
+									src="images/Pictures/centrum.jpeg"
+									class="w-100"
+									alt="centrum"
+								/>
+							</div>
+							<div class="layer text-center p-2">
+								<div class="item-content mt-5">
+									<h4>Centrum</h4>
+									<p>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										Quasi impedit delectus qui atque quaerat nemo.
+									</p>
+									<span>600EGP</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-4 col-xl-3">
+						<div class="item1 shadow mb-5 bg-secondary rounded">
+							<div>
+								<img src="images/Pictures/Rivo.jpg" class="w-100" alt="Rivo" />
+							</div>
+							<div class="layer text-center p-2">
+								<div class="item-content mt-5">
+									<h4>Rivo</h4>
+									<p>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										Quasi impedit delectus qui atque quaerat nemo.
+									</p>
+									<span>63EGP</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-4 col-xl-3">
+						<div class="item1 shadow mb-5 bg-secondary rounded">
+							<div>
+								<img
+									src="images/Pictures/Panadol.png"
+									class="w-100"
+									alt="Panadol"
+								/>
+							</div>
+							<div class="layer text-center p-2">
+								<div class="item-content mt-5">
+									<h4>Panadol</h4>
+									<p>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										Quasi impedit delectus qui atque quaerat nemo.
+									</p>
+									<span>40EGP</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-4 col-xl-3">
+						<a href="item.html">
+							<div class="item1 shadow mb-5 bg-secondary rounded">
+								<div>
+									<img
+										src="images/Pictures/panadol2.jpeg"
+										class="w-100"
+										alt="panadol2"
+									/>
+								</div>
+								<div class="layer text-center p-2">
+									<div class="item-content mt-5">
+										<h4>Panadol</h4>
+										<p>
+											Lorem ipsum dolor sit amet consectetur adipisicing elit.
+											Quasi impedit delectus qui atque quaerat nemo.
+										</p>
+										<span>45EGP</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endblock content %}

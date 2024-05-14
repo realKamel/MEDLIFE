@@ -1,15 +1,96 @@
-{% extends "base.html" %} {% load static %} {% block content %}
+{% extends "base.html" %} 
+{% load static %} 
+{% block content %}
 
 <main class="mt-5">
-	<div class="container p-5">
+	<div class="panadol my-5">
+		<div class="container p-3">
+			<div class="row">
+				<div class="col-lg-6 my-2">
+					<div class="row">
+						<div class="back col-12">
+							<div class>
+								<a href="products.html">
+									<i class="fa-solid fa-arrow-left text-white"></i>
+								</a>
+							</div>
+							<h3 class="h2">Back To Product</h3>
+						</div>
+						<div class="col-12">
+							<div
+							class="img-content bg-white mt-3 rounded shadow-lg pb-3">
+							<div class="w-100 my-flx">
+								<img
+									src="images/Pictures/panadol2.jpeg"
+									class="col-8 rounded"
+									alt=""
+								/>
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+					<div class="content my-flx">			
+						<h3 class="pana w-100">Panadol</h3>
+						<div class="contain rounded ps-1">
+							<p class="lead">description : </p>
+							<p class="lead">
+								Get effective pain relief with panadol
+								500 mg film-coated, Tabled which
+								releases its medicine up to 5x faster
+								than standard paracetanol.
+							</p>
+							<p class="lead">
+								We all know that everyday aches and
+								pains can sometimes get in the way of
+								life. when they do reach for an
+								effective pain relief tablet with a fast
+								absorption that can get to work quickly
+								and leaves the body naturally in 24
+								hours-like panadol 500 mg filmCoated
+								Tables.
+							</p>
+						</div>
+					</div>
+					<div class="btn mt-2">
+						<button class="me-3 btn1 rounded border p-3">
+							<div>
+								<i
+									class="fa-regular fa-money-bill-1 me-3"
+								></i>
+							</div>
+							<span class="fs-3">Buy</span>
+						</button>
+						<button class="rounded border-0 p-1">
+							<div>
+								<i
+									class="fa-solid fa-cart-shopping me-3"
+								></i>
+							</div>
+							<span class="">add to cart</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="container p-5">
 		<div class="row justify-content-center align-items-center g-2 flex-wrap">
-			<div class="back-arrow bg-body-tertiary">
-				<a class="text-decoration-none" href="products.html"> a </a>
+			<div class="back-arrow bg-body-tertiary ">
+				<a class="text-decoration-none" href="products.html">
+
+				</a>
 			</div>
 			<div class="col-lg-6">
 				<div class="content">
 					<div class="row justify-content-center align-items-center g-2">
-						<img src="images/Pictures/panadol2.jpeg" alt="" class="d-block rounded" />
+						<img
+							src="images/Pictures/panadol2.jpeg"
+							alt=""
+							class="d-block rounded"
+						/>
 						<div
 							class="price row justify-content-center align-items-center g-2 flex-wrap"
 						>
@@ -20,11 +101,15 @@
 								class="col-5 row justify-content-center align-items-center g-2 flex-wrap"
 							>
 								<div class="plus col-4">
-									<button type="button" class="btn btn-light fs-4">+</button>
+									<button type="button" class="btn btn-light fs-4">
+										+
+									</button>
 								</div>
 								<div class="number col-4 fw-bolder lead">1</div>
 								<div class="plus col-4">
-									<button type="button" class="btn btn-light fs-4">-</button>
+									<button type="button" class="btn btn-light fs-4">
+										-
+									</button>
 								</div>
 							</div>
 						</div>
@@ -33,6 +118,6 @@
 			</div>
 			<div class="col-lg-6"></div>
 		</div>
-	</div>
+	</div> -->
 </main>
 {% endblock content %}
