@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from .forms import ClientRegistrationForm,UserLoginForm
+#from .forms import ClientRegistrationForm,UserLoginForm
 
 #from django.http.response import HttpResponse
 # Create your views here.
@@ -28,7 +28,8 @@ def search(request):
 
 #user_sign_up
 def register(request):
-    if request.method == 'POST':
+    return render(request, 'signup.html')
+"""  if request.method == 'POST':
         form = ClientRegistrationForm(request.POST)  # Use your custom form if applicable
         if form.is_valid():
             user = form.save()
@@ -39,13 +40,13 @@ def register(request):
             # Add any post-registration logic here (e.g., login the user)
             return redirect('login')  # Redirect to login page after registration
     else:
-        form = ClientRegistrationForm()  # Use your custom form if applicable
-    return render(request, 'signup.html', {'form': form})
+        form = ClientRegistrationForm()  # Use your custom form if applicable """
+    
 
 
 # login page
-def user_login(request):
-    if request.method == 'POST':
+def login(request):
+    """ if request.method == 'POST':
         form = UserLoginForm(data=request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
@@ -55,14 +56,9 @@ def user_login(request):
                 login(request, user)
                 return redirect('index')  # Redirect to your home page
     else:
-        form = UserLoginForm()
-    return render(request, 'login.html', {'form': form})
+        form = UserLoginForm() """
+    return render(request, 'login.html')
 
-
-def user_login(request):
-    if request.method == 'POST':
-        form = UserLoginForm(data=request.POST)
-       
 
 # logout page
 def user_logout(request):
