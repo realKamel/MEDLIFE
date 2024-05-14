@@ -8,7 +8,7 @@ class product_item(models.Model):
     x = [
         ('Medicine','Medicine'),
         ('Equipment','Equipment'),
-        ('Vitamins','Vitamins'),
+        ('Vitamins','Vitamins')
     ]
     name = models.CharField(max_length=20)
     content = models.TextField()
