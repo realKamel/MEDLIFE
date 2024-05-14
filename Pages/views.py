@@ -1,38 +1,25 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from .forms import ClientRegistrationForm,UserLoginForm
 
 #from django.http.response import HttpResponse
 # Create your views here.
  
 
-
 def index(request):
     return render(request,'index.html')
 
-
 def about_us(request):
-    return render(request,'about_us.html')
-
+    return render(request,'aboutus.html')
 
 def contact_us(request):
-    return render(request,'contact_us.html')
-
+    return render(request,'contactus.html')
 
 def item(request):
     return render(request,'item.html')
 
-
-""" def log_in(request):
-    return render(request,'log_in.html')
- """
-
-""" def sign_up(request):
-    return render(request,'sign_up.html') """
-
-
 def products(request):
     return render(request,'products.html')
-
 
 
 def search(request):
@@ -40,30 +27,42 @@ def search(request):
 
 
 #user_sign_up
-def user_signup(request):
+def register(request):
     if request.method == 'POST':
-        form = SignupForm(request.POST)
+        form = ClientRegistrationForm(request.POST)  # Use your custom form if applicable
         if form.is_valid():
-            form.save()
-            return redirect('login')
+            user = form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)# Saves the user and creates the client profile automatically
+            # Add any post-registration logic here (e.g., login the user)
+            return redirect('login')  # Redirect to login page after registration
     else:
-        form = SignupForm()
-    return render(request, 'sign_up.html', {'form': form})
+        form = ClientRegistrationForm()  # Use your custom form if applicable
+    return render(request, 'signup.html', {'form': form})
+
 
 # login page
 def user_login(request):
     if request.method == 'POST':
-        form = LoginForm(request.POST)
+        form = UserLoginForm(data=request.POST)
         if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            user = authenticate(request, username=username, password=password)
-            if user:
-                login(request, user)    
-                return redirect('index.html')
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('index')  # Redirect to your home page
     else:
-        form = LoginForm()
-    return render(request, 'log_in.html', {'form': form})
+        form = UserLoginForm()
+    return render(request, 'login.html', {'form': form})
+
+
+def user_login(request):
+    if request.method == 'POST':
+        form = UserLoginForm(data=request.POST)
+       
 
 # logout page
 def user_logout(request):
