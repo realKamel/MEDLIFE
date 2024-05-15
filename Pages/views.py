@@ -16,14 +16,14 @@ from django.contrib import messages
 #from django.http.response import HttpResponse
 # Create your views here.
 
-def index(request):
+def home(request):
     return render(request,'index.html')
 
 def about_us(request):
-    return render(request,'aboutus.html')
+    return render(request,'about_us.html')
 
 def contact_us(request):
-    return render(request,'contactus.html')
+    return render(request,'contact_us.html')
 
 def item(request):
     return render(request,'item.html')
@@ -36,8 +36,6 @@ def search(request):
     return render(request,'search.html')
 
 # login page
-
-
 
 def login_view(request):
     if request.method == 'POST':
@@ -84,7 +82,6 @@ def signup_view(request):
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
-
 
 
 
