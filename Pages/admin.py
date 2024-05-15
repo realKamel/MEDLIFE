@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from .models import product_item
 from .models import client
+
 # Register your models here.
 
 

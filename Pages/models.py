@@ -1,7 +1,6 @@
-
 from django.db import models
 
-    
+
 # Create your models here.
 
 class product_item(models.Model):
@@ -22,14 +21,11 @@ class product_item(models.Model):
         return self.name
     
     
-    
 class client(models.Model):
     name = models.CharField(max_length=100)
     username = models.CharField(max_length=100,unique = True)
     password = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
-    phonenumber  = models.CharField(max_length=20)
-    image = models.ImageField(upload_to='user_image/%y/%m/%d')  # This field stores the room image
-
+    
     def __str__(self):
         return self.name
