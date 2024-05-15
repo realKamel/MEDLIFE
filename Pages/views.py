@@ -1,11 +1,9 @@
 from django.shortcuts import render, redirect,get_object_or_404
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout # to handle user events
+from django.contrib import messages
 from .forms import SignUpForm
 from .models import client , product_item
-from django.contrib.auth.models import User
-from django.contrib.auth.hashers import make_password
-from django.contrib.auth.hashers import check_password 
-from django.contrib import messages
+
 
 
 
@@ -33,12 +31,26 @@ def products(request):
     return render(request,'products.html',{'all_products':all_products})
 
 
+
+def login_client(request):
+    
+    return render(request,'log_in.html')
+
+
+def logout_client(request):
+    logout(request)
+    return redirect('home')
+
+
 def search(request):
     return render(request,'search.html')
 
+def signup_view(request):
+    return render(request,'sign_up.html')
+
 # login page
 
-def login_view(request):
+""" def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -57,9 +69,10 @@ def login_view(request):
         else:
             messages.error(request, 'Please provide both username and password.')
     return render(request, 'login.html')
+ """
 
-
-def signup_view(request):
+""" def signup_view(request):
+    pass
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
@@ -84,13 +97,7 @@ def signup_view(request):
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
 
-
-
-def Client_logout(request):
-    logout(request)
-    return redirect('login')
-
-
+ """
 
 
 
