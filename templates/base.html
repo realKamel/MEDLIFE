@@ -13,6 +13,14 @@
         {% comment %} Nav bar {% endcomment %}
 		{% include "parts/navbar.html" %}
 		{% include "parts/circle.html" %}
+		{% if  messages%}
+			{% for messg in messages %}
+			<div class="alert alert-warning alert-dismissible fade show mt-5" role="alert">
+				{{messg}}
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			  </div>
+			{% endfor %}
+		{% endif %}
 		{% block content%}
         {% endblock content%}
 		{% include "parts/footer.html" %}

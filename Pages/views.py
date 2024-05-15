@@ -1,10 +1,14 @@
-from django.shortcuts import render, redirect,get_object_or_404
-from django.contrib.auth import authenticate, login, logout # to handle user events
+
+
 from django.contrib import messages
-from .forms import SignUpForm
+
+from django.shortcuts import render, redirect,get_object_or_404 
 from .models import client , product_item
-
-
+from django.contrib.auth import authenticate, login, logout # to handle user events
+from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from .forms import SignUpForm
 
 
 
@@ -23,8 +27,9 @@ def about_us(request):
 def contact_us(request):
     return render(request,'contact_us.html')
 
-def item(request):
-    return render(request,'item.html')
+def item(request,pk):
+    all_products = product_item.objects.get(id=pk)
+    return render(request,'item.html',{'all_products':all_products})
 
 def products(request):
     all_products = product_item.objects.all()
@@ -32,21 +37,51 @@ def products(request):
 
 
 
-def login_client(request):
-    
-    return render(request,'log_in.html')
+
+def login_user(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        
+        user = authenticate(request, username=username, password=password)
+        
+        if user is not None:
+            login(request, user)
+            messages.success(request, "Logged in successfully.")
+            return redirect('home')
+        else:
+            messages.error(request, "Invalid username or password.")
+            return redirect('login')
+    else:
+        return render(request, 'login.html')
 
 
-def logout_client(request):
+def logout_user(request):
     logout(request)
+    messages.success(request,("Logged out successfully :)"))
     return redirect('home')
 
 
 def search(request):
     return render(request,'search.html')
 
-def signup_view(request):
-    return render(request,'sign_up.html')
+def signup_user(request):
+    form = SignUpForm()
+    if request.method == "POST":
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+            
+            user = authenticate(request, username=username, password=password)
+            login(request,user)
+            messages.success(request,("registed successfully :)"))
+            return redirect('home')
+        else:
+            messages.success(request,("Error :)"))  
+    else: 
+        return render(request,'sign_up.html',{'form':form})
 
 # login page
 
