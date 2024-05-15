@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect,get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from .forms import SignUpForm
-from .models import client
+from .models import client , product_item
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import check_password 
@@ -29,7 +29,8 @@ def item(request):
     return render(request,'item.html')
 
 def products(request):
-    return render(request,'products.html')
+    all_products = product_item.objects.all()
+    return render(request,'products.html',{'all_products':all_products})
 
 
 def search(request):

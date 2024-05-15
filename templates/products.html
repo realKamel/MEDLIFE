@@ -1,6 +1,11 @@
-{% extends "base.html" %} {% load static %} {% block content %}
+{% extends "base.html" %} 
+{% load static %}
+{% block content %}
 
 <main class="products my-5">
+
+	
+
 	<div class="container p-5">
 		<div class="row justify-content-center align-items-center g-2 flex-wrap">
 			<div class="col-12">
@@ -14,7 +19,7 @@
 						>
 							<div>
 								<img
-									src="images/Pictures/mediction.png"
+									src="{% static "images/Pictures/mediction.png" %}"
 									class="w-100 rounded"
 									alt="mediction"
 								/>
@@ -26,7 +31,7 @@
 						<div class="head-item shadow-lg mb-5 bg-body-tertiary rounded">
 							<div>
 								<img
-									src="images/Pictures/medical.png"
+									src="{% static "images/Pictures/medical.png" %}"
 									class="w-100 rounded"
 									alt="medical"
 								/>
@@ -38,7 +43,7 @@
 						<div class="head-item shadow-lg mb-5 bg-body-tertiary rounded">
 							<div>
 								<img
-									src="images/Pictures/vitamine.png"
+									src="{% static "images/Pictures/vitamine.png" %}"
 									class="w-100 rounded"
 									alt="vitamine"
 								/>
@@ -56,12 +61,55 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="col-12">
 				<div class="row align-items-center justify-content-center mt-4">
 					<div class="col-12">
 						<h3 class="text-center main-color-blue h1 fw-1 mb-4">Featured Products</h3>
 					</div>
+
+					{% for product in all_products %}
 					<div class="col-md-6 col-lg-4 col-xl-3">
+						<div class="item1 shadow mb-5 bg-secondary rounded">
+							<div>
+								<img
+									src="{{product.image.url}}"
+									class="w-100"
+									alt=""
+								/>
+							</div>
+							<div class="layer text-center p-2">
+								<div class="item-content mt-5">
+									<h4>{{product.name}}</h4>
+									<p>
+										{{product.content}}
+									</p>
+									<span>{{product.price}}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+				{% comment %} 	<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="item1 shadow mb-5 bg-secondary rounded">
 							<div>
 								<img
@@ -304,7 +352,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> {% endcomment %}
 				</div>
 			</div>
 		</div>
